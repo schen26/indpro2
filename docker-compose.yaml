@@ -1,0 +1,24 @@
+version: '3.7'
+services:
+    nginx:
+      container_name: nginx
+      image: nginx:latest
+      volumes:
+      - type: bind
+        source: ./nginx/nginx.conf
+        target: /etc/nginx/nginx.conf
+      ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+      depends_on:
+        - service2
+        - service3
+    service2:
+      build:
+        context: ./service2
+        dockerfile: Dockerfile
+    service3:
+      build:
+        context: ./service3
+        dockerfile: Dockerfile
