@@ -1,4 +1,7 @@
-FROM python:${PYTHON_VERSION}
+FROM python:latest
+WORKDIR /app
 RUN apt update
-COPY . .
+COPY requirements.txt .
+RUN pip3 install -r requirements.txt
+COPY . . 
 ENTRYPOINT ["/usr/local/bin/python", "app.py"]

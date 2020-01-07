@@ -2,13 +2,13 @@ from application import app
 import random
 
 
-@app.route('/')
+@app.route('/', methods=['POST'])
 def randNumA():
-    return random.randint(1, 5)
+    return str(random.randint(1, 5))
 
 @app.route('/more')
 def randNumB():
-    return random.randint(1, 10)
+    return str(random.randint(1, 10))
 
 
 

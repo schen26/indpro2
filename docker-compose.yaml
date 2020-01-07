@@ -18,7 +18,15 @@ services:
     ports:
       - target: 5002
         published: 5002
-
+  service4:
+    image: service4
+    container_name: service4
+    build:
+      context: ./flask-service-4
+      dockerfile: Dockerfile
+    ports:
+      - target: 5003
+        published: 5003
 
         #    service3:
         #      build:
