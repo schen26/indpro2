@@ -1,24 +1,17 @@
-version: '3.7'
+version: '3.3'
 services:
-    nginx:
-      container_name: nginx
-      image: nginx:latest
-      volumes:
-      - type: bind
-        source: ./nginx/nginx.conf
-        target: /etc/nginx/nginx.conf
-      ports:
-      - target: 80
-        published: 80
-        protocol: tcp
-      depends_on:
-        - service2
-        - service3
-    service2:
-      build:
-        context: ./service2
-        dockerfile: Dockerfile
-    service3:
-      build:
-        context: ./service3
-        dockerfile: Dockerfile
+  service2:
+    image: service2
+    container_name: service2
+    build:
+      context: ./flask-service-2
+      dockerfile: Dockerfile
+    ports: 
+    - target: 5001
+      published: 5001
+
+
+        #    service3:
+        #      build:
+        # context: ./service3
+        # dockerfile: Dockerfile
