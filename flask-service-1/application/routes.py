@@ -1,21 +1,35 @@
-from flask import Flask
-app = Flask(__name__)
+#get the coordination and the outcome on home.html 
 
-@app.route("/")
-def index():
-    return "Index!"
+from application import app
+import requests
+from flask import Flask, render_template
+from application import db
+from application.models import coordinates 
 
-@app.route("/hello")
-def hello():
-    return "Hello World!"
 
-@app.route("/members")
-def members():
-    return "Members"
+@app.route("/", methods=['GET','POST'])
+def hitMiss():
+    random_letter=requests.post('http://service2:5001').text
+    random_number=requests.post('http://service3:5002').text
+    hitMiss=requests.get('http://service4:5003').text
 
-@app.route("/members/<string:name>/")
-def getMember(name):
-    return name</string:name>
+    return render_template('home.html', random_letter=random_letter, random_number=random_number, hitMiss=hitMiss)
 
-if __name__ == "__main__":
-    app.run()
+'''    count=0
+    while count<25:
+        random_letter=requests.post('http://service2:5001').text
+        random_number=requests.post('http://service3:5002').text
+        hitMiss=requests.get('http://service4:5003').text
+
+        prevCoord=str(random_letter)+str(random_number)
+        coordData=coordinates.query.all()
+        if prevCoord in coordData: 
+            count += 1
+            return render_template('home.html', random_letter=random_letter, random_number=random_number, hitMiss=hitMiss)
+        else:
+            prevCoord=coordinates(previous_coordinates=prevCoord)
+            db.session.add(prevCoord)
+            db.session.commit()
+            return render_template('home.html', random_letter=random_letter, random_number=random_number, hitMiss=hitMiss)
+   # return render_template('home.html', random_letter=random_letter, random_number=random_number, hitMiss=hitMiss)'''
+

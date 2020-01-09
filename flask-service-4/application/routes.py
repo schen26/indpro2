@@ -14,9 +14,20 @@ def hit_or_miss():
 
     coordination = random_letter + random_number
     list_of_hits = ['a1', 'b2', 'c3', 'd4']
+    #list_of_hits = list_of_hits.sort()
+    got_hit=[]
 
+    past_coordinates=[]
 
     if coordination in list_of_hits:
+        '''if coordination in past_coordinates:
+            continue
+        else:'''
+        past_coordinates.append(coordination)
+        got_hit.append(coordination)
+        '''if got_hit.sort()==list_of_hits:
+            return "You sunk my battleship!!!"'''
         return "You hit my battleship!"
     else:
+        past_coordinates.append(coordination)
         return "You miss my battleship!"
