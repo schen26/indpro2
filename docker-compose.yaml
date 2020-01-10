@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   service1:
-    image: service1
+    image: indpro2-jen:5000/service1:build-${BUILD_NUMBER}
     container_name: service1
     build:
       context: ./flask-service-1
@@ -10,7 +10,7 @@ services:
     - target: 5000
       published: 5000
   service2:
-    image: service2
+    image: indpro2-jen:5000/service2:build-${BUILD_NUMBER}
     container_name: service2
     build:
       context: ./flask-service-2
@@ -19,7 +19,7 @@ services:
     - target: 5001
       published: 5001
   service3:
-    image: service3
+    image: indpro2-jen:5000/service3:build-${BUILD_NUMBER}
     container_name: service3
     build:
       context: ./flask-service-3
@@ -28,7 +28,7 @@ services:
       - target: 5002
         published: 5002
   service4:
-    image: service4
+    image: indpro2-jen:5000/service4:build-${BUILD_NUMBER}
     container_name: service4
     build:
       context: ./flask-service-4
