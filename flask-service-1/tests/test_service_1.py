@@ -1,28 +1,19 @@
 import unittest
-
 from flask import abort, url_for
 from flask_testing import TestCase
 from os import getenv
 from application import app, db
-from application.models import Users, Posts
+from application.models import coordinates
 
 class TestBase(TestCase): 
 
     def create_app(self):
-
-        # pass in test configurations
         config_name = 'testing'
-       # app.config.update(
-        #    SQLALCHEMY_DATABASE_URI='mysql+pymysql://'+str(getenv('MYSQL_USER'))+':'+str(getenv('MYSQL_PASS'))+'@'+str(getenv('MYSQL_URL'))+'/'+str(getenv('MYSQL_DB_TEST'))        )
         app.config.update(
             SQLALCHEMY_DATABASE_URI='mysql+pymysql://'+str(getenv('MYSQL_USER'))+':'+str(getenv('MYSQL_PASS'))+'@'+str(getenv('MYSQL_URL'))+'/'+str(getenv('MYSQL_DB_TEST'))        )
         return app
 
     def setUp(self):
-        """
-        Will be called before every test
-        """
-
         db.session.commit()
         db.drop_all()
         db.create_all()
@@ -40,9 +31,6 @@ class TestBase(TestCase):
         db.session.commit()
 
     def tearDown(self):
-        """
-        Will be called after every test
-        """
         db.session.remove()
         db.drop_all()
 
@@ -52,16 +40,4 @@ class testingtesting(TestBase):
         response = self.client.get(url_for('home'))
         self.assertEqual(response.status_code, 200)
 
-    def test_add_update_delete(self):
-        post = Posts(englishh="yes", spanishh="si", comment="n/a")
-        db.session.add(post)
-        db.session.commit()
-
-        self.assertEqual(Posts.query.count(), 1)
-    def test_update_account(self):
-        user = Users(first_name="lucy", last_name="lu", email="lucylu@gmail.com", password="lucylu")
-        db.session.add(user)
-        db.session.commit()
-        user = Users(first_name="simon", last_name="chen", email="simon@gmail.com", password="simon")
-        db.session.commit()
 

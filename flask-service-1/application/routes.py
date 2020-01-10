@@ -9,9 +9,12 @@ from application.models import coordinates
 
 @app.route("/", methods=['GET','POST'])
 def hitMiss():
-    random_letter=requests.post('http://service2:5001').text
-    random_number=requests.post('http://service3:5002').text
-    hitMiss=requests.get('http://service4:5003').text
+    hitMiss=requests.post('http://service4:5003')
+
+    if hitMiss.ok:
+        random_letter=hitMiss.json()["random_letter"]
+        random_number=hitMiss.json()["random_number"]
+        hitMiss=hitMiss.json()["hitMiss"]
 
     return render_template('home.html', random_letter=random_letter, random_number=random_number, hitMiss=hitMiss)
 

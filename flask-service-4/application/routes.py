@@ -5,7 +5,7 @@ import requests
 #link this service to SQL somehow
 #the output of this is then linked to service 1
 
-@app.route('/')
+@app.route('/', methods=['GET','POST'])
 def hit_or_miss():
     random_letter=requests.post('http://service2:5001').text
     random_number=requests.post('http://service3:5002').text
@@ -27,7 +27,9 @@ def hit_or_miss():
         got_hit.append(coordination)
         '''if got_hit.sort()==list_of_hits:
             return "You sunk my battleship!!!"'''
-        return "You hit my battleship!"
+        return {"random_letter":random_letter, "random_number":random_number, "hitMiss":"You hit my battleship!"}
+    #"You hit my battleship!"
     else:
         past_coordinates.append(coordination)
-        return "You miss my battleship!"
+        return {"random_letter":random_letter, "random_number":random_number, "hitMiss":"You miss my battleship!"}
+   # "You miss my battleship!"
