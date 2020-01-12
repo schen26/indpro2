@@ -3,7 +3,8 @@ from application import db
 
 
 class coordinates(db.Model):
-    previous_coordinates = db.Column(db.String(10), nullable=False, unique=True, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
+    previous_coordinates = db.Column(db.String(10), nullable=False)  #, unique=True, primary_key=True)
 
     def __repr__(self):
         return ''.join([

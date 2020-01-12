@@ -1,0 +1,2 @@
+[run]
+omit=/home/simonc2309/indpro2/venv/*, tests/*
