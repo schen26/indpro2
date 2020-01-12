@@ -16,7 +16,8 @@
 ## Brief
 The project brief was to make a system that automates the 
 ## Battleship Application
-For service 2 and service 3, they output one random letter and one random number respectively. Service 4 get the outputs from both services and combine them to form a coordination. The program will check if the coordination matches any of the coordinates that contains a ship and if it does, it would return "You hit my battleship!" or "You miss my battleship!". The information gathered and outputted from service 4 will then be passed into the service 1 through json and service 1 will display the result on the web.
+For service 2, it outputs a random letter between the letters 'a' to 'e' in lowercase; and for service 3, it outputs a random number between one and five. Thus this creates a five-by-five array,giving the users 25 coordinates to place their ships.
+For service 4 get the outputs from both services and combine them to form a coordination. The program will check if the coordination matches any of the coordinates that contains a ship and if it does, it would return "You hit my battleship!" or "You miss my battleship!". The information gathered and outputted from service 4 will then be passed into the service 1 through json and service 1 will display the result on the web.
 
 The front-page shows:
 
@@ -43,6 +44,9 @@ Jenkins VM ssh into the flask services VM and automate the build of docker-compo
 ![RiskAssessment][riskassessment]
 
 ## Testing and Coverage 
+Two tests have been conducted, one for service 2 to test if it outputs a random between the letters 'a' to 'e' in lowercase; and another for service 3 to test if the output is between one and five.
+Service 1 and 4 depends on other services, hence it wasn’t possible to test them both.
+The database was tested on service 1.
 
 ![coverage][coverage]
 
