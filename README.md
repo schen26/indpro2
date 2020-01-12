@@ -14,14 +14,16 @@ For Service 4, it gets the outputs from Service 2 and 3, and combines them to fo
 
 The information gathered and outputted from Service 4 will then be passed into the service 1 through json and service 1 will display the result on the web. Service 1 is also where the coordinates are stored in mySQL.
 
+* Website: http://http://34.89.25.151:5000/
+
 ### CI Pipeline
 The CI tools and software used in this project include:
-*CI Server Jenkins 
-*Ansible for Configuration Management
-*GCP VMs
-*Docker and Docker Swarm 
-*Trello Kanban board 
-*Git Version Control 
+* CI Server Jenkins 
+* Ansible for Configuration Management
+* GCP VMs
+* Docker and Docker Swarm 
+* Trello Kanban board 
+* Git Version Control 
 
 Jenkins and the Flask Services have a VM of their own. 
 Jenkins webhooks any changes made on the application from Github. 
@@ -34,27 +36,26 @@ The following are documentation from Trello in order to keep track of the projec
 
 ###Trello
 
-
+* Trello: https://trello.com/b/PUBvtaAZ/individual-project-2
 
 ### Risk Assessment
 
-
+* Risk Assessment: https://docs.google.com/spreadsheets/d/1oo7wguKR8sefzVaVCjLgZnzoyaDsgtlERXG5RS0uxJ8/edit#gid=0
 
 ## Testing and Coverage 
 Two tests have been conducted, one for Service 2 another for Service 3.
 Service 1 and 4 depends on other services, hence it wasn’t possible to test them both.
 The database was tested on service 1.
 
-
-
+* Presentation: https://docs.google.com/presentation/d/1KqmrXVLW7X2874goL3qRIz_XFjn9wPi7bLrORbKw5xM/edit#slide=id.g76613142fe_0_21
 
 ## Future Development
 There are some issues within this application that can be resolved if more time is given, these include:
-*The game doesn’t stop when all parts of the ship has been hit.
-*The game doesn’t stop after all coordinations has been hit.
-*The coordinates repeat itself, hence it would take longer to complete the solve. 
-*Tests to be created for Service 1 and 4.
-*More tests for Service 2 and 3. 
+* The game doesn’t stop when all parts of the ship has been hit.
+* The game doesn’t stop after all coordinations has been hit.
+* The coordinates repeat itself, hence it would take longer to complete the solve. 
+* Tests to be created for Service 1 and 4.
+* More tests for Service 2 and 3. 
 
 ##Conclusion
 By utilising what has been taught in the previous project, in addition to other CI tools after that, it resulted in the creation of this project; which is a battleship solver that will identify the location of the coordinations that contain part of the ship. 
@@ -65,9 +66,8 @@ Further improvements on the project are needed such as additional features, to m
 ## Authors
 Simon Chen
 
-### Links:
-* Trello: https://trello.com/b/PUBvtaAZ/individual-project-2
-* Website: http://http://34.89.25.151:5000/
+
+
 
 
 
