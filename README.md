@@ -2,9 +2,9 @@
 
 ## Brief
 The project brief was to make a service-orientated architecture, which contains four services:
-*Service 1- core service, render Jinja2 template, SQL database
-*Service 2 and 3-  generate random objects
-*Service 4- creates an object based on the previous two services 
+* Service 1- core service, render Jinja2 template, SQL database
+* Service 2 and 3- generate random objects
+* Service 4- creates an object based on the previous two services 
 The services also need to have two implementations and are able to switch between the two without any disruptions to the user. 
 
 
@@ -29,24 +29,23 @@ On Jenkins VM, it contains Jenkins and Docker Registry. Jenkins automates the bu
 Jenkins then ssh into the Flask-Services VM, which is a manager node in Docker Swarm and node creates Docker Stack and deploy the services if needed.
 Ideally Ansible should be on another VM, however it is placed in the Flask-Service VM for ease of assessing the entire application.
 
-![ci][ci]
-
 ##Documentation
 The following are documentation from Trello in order to keep track of the project progress, and a Risk Assessment matrix.
+
 ###Trello
 
-![trello][trello]
+
 
 ### Risk Assessment
 
-![RiskAssessment][riskassessment]
+
 
 ## Testing and Coverage 
 Two tests have been conducted, one for Service 2 another for Service 3.
 Service 1 and 4 depends on other services, hence it wasn’t possible to test them both.
 The database was tested on service 1.
 
-![coverage][coverage]
+
 
 
 ## Future Development
@@ -70,8 +69,8 @@ Simon Chen
 * Trello: https://trello.com/b/PUBvtaAZ/individual-project-2
 * Website: http://http://34.89.25.151:5000/
 
-[ci]: https://i.imgur.com/2G7joFp.png
-[riskassessment]: https://i.imgur.com/btY8HRY.png
-[coverage]: https://i.imgur.com/WDaANiD.png
-[trello]: https://i.imgur.com/etDOlwa.png
+
+
+
+
 
