@@ -6,13 +6,13 @@ services:
     build:
       context: ./flask-service-1
       dockerfile: Dockerfile
-      args:
-      - MYSQL_DB_TEST=${MYSQL_DB_TEST}
-      - MYSQL_KEY=${MYSQL_KEY}
-      - MYSQL_DB=${MYSQL_DB}
-      - MYSQL_URL=${MYSQL_URL}
-      - MYSQL_PASS=${MYSQL_PASS}
-      - MYSQL_USER=${MYSQL_USER}
+    environment:
+    - MYSQL_DB_TEST=${MYSQL_DB_TEST}
+    - MYSQL_KEY=${MYSQL_KEY}
+    - MYSQL_DB=${MYSQL_DB}
+    - MYSQL_URL=${MYSQL_URL}
+    - MYSQL_PASS=${MYSQL_PASS}
+    - MYSQL_USER=${MYSQL_USER}
     ports:
     - target: 5000
       published: 5000
