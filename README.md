@@ -31,10 +31,10 @@ On Jenkins VM, it contains Jenkins and Docker Registry. Jenkins automates the bu
 Jenkins then ssh into the Flask-Services VM, which is a manager node in Docker Swarm and node creates Docker Stack and deploy the services if needed.
 Ideally Ansible should be on another VM, however it is placed in the Flask-Service VM for ease of assessing the entire application.
 
-##Documentation
+## Documentation
 The following are documentation from Trello in order to keep track of the project progress, and a Risk Assessment matrix.
 
-###Trello
+### Trello
 
 * Trello: https://trello.com/b/PUBvtaAZ/individual-project-2
 
@@ -57,7 +57,7 @@ There are some issues within this application that can be resolved if more time 
 * Tests to be created for Service 1 and 4.
 * More tests for Service 2 and 3. 
 
-##Conclusion
+## Conclusion
 By utilising what has been taught in the previous project, in addition to other CI tools after that, it resulted in the creation of this project; which is a battleship solver that will identify the location of the coordinations that contain part of the ship. 
 The tools allowed me to implement my code to different machines and environments without having to worry if the application will run or not.
 Two tests are conducted with a coverage of 
