@@ -15,8 +15,7 @@ class TestBase(TestCase):
     def create_app(self):
         config_name = 'testing'
         app.config.update(
-            SQLALCHEMY_DATABASE_URI='mysql+pymysql://root:root@35.246.111.139/db')
-            #mysql+pymysql://'+str(getenv('MYSQL_USER'))+':'+str(getenv('MYSQL_PASS'))+'@'+str(getenv('MYSQL_URL'))+'/'+str(getenv('MYSQL_DB_TEST'))        )
+            SQLALCHEMY_DATABASE_URI='mysql+pymysql://'+str(getenv('MYSQL_USER'))+':'+str(getenv('MYSQL_PASS'))+'@'+str(getenv('MYSQL_URL'))+'/'+str(getenv('MYSQL_DB_TEST')))
         return app
 
     def setUp(self):
@@ -35,21 +34,19 @@ class TestBase(TestCase):
         db.session.add(previous_coordinates)
 
         db.session.commit()
-
+        self.assertTrue(True)
     def tearDown(self):
         db.session.remove()
         db.drop_all()
+        self.assertTrue(True)
 
 class testingtesting(TestBase):
     
-    def test_homepage_view(self):
-        randomLetter = routes.randLet()
-        if randomLetter == 'a' or randomLetter == 'b' or randomLetter == 'c' or randomLetter == 'd' or randomLetter == 'e':
-            self.assertTrue(True)
-        else:
-            self.assertFalse(False)
-            
-           # esponse = self.client.get(url_for('hitMiss'))
-        #self.assertEqual(response.status_code, 200)
+    def test_add_to_db(self):
+        prevCoord = coordinates(previous_coordinates='a1')
+        db.session.add(prevCoord)
+        db.session.commit()
+        self.assertEqual(coordinates.query.count(), 2)
+
 
 
