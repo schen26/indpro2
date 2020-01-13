@@ -44,7 +44,7 @@ The following are documentation from Trello in order to keep track of the projec
 * Risk Assessment: https://docs.google.com/spreadsheets/d/1oo7wguKR8sefzVaVCjLgZnzoyaDsgtlERXG5RS0uxJ8/edit#gid=0
 
 ## Testing and Coverage 
-Three tests have been conducted for Service 1, 2 and 3. All passed with a coverage of 49%, 90% and 89% respectively.
+Three unit tests have been conducted through pytest for Service 1, 2 and 3. All passed with a coverage of 49%, 90% and 89% respectively.
 Service 4 requires on Services 1 and 2 to run to test the output, hence it wasn’t possible to test it without further configuration of the environment.
 The database was tested on Service 1 for its ability to add to the database.
 
