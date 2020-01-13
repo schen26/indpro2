@@ -9,7 +9,8 @@ The services also need to have two implementations and are able to switch betwee
 
 
 ## Battleship Solver Application
-For Service 2, it outputs a random letter between the letters 'a' to 'e' in lowercase; and for Service 3, it outputs a random number between one and five. Thus this creates a five-by-five array,giving the users 25 coordinates to place their ships. Within this array there is one ship of length 4 in located in a1, b2, c3 and d4, this is stored in a list inside Service 4.
+For Service 2, it outputs a random letter between the letters 'a' to 'e' in lowercase; and for Service 3, it outputs a random number between one and five. Thus this creates a five-by-five array, giving the users 25 coordinates to place their ships. Within this array there is one ship of length 4 in located in a1, b2, c3 and d4, this is stored in a list inside Service 4.
+
 For Service 4, it gets the outputs from Service 2 and 3, and combines them to form a coordinate. The application will check list of coordinates that contains part of a ship and if it does, it would return "You hit my battleship!" or "You miss my battleship!" if it doesn’t. 
 
 The information gathered and outputted from Service 4 will then be passed into the service 1 through json and service 1 will display the result on the web. Service 1 is also where the coordinates are stored in mySQL.
