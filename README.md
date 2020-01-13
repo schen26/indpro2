@@ -13,16 +13,15 @@ For Service 2, it outputs a random letter between the letters 'a' to 'e' in lowe
 
 For Service 4, it gets the outputs from Service 2 and 3, and combines them to form a coordinate. The application will check list of coordinates that contains part of a ship and if it does, it would return "You hit my battleship!" or "You miss my battleship!" if it doesn’t. 
 
-The information gathered and outputted from Service 4 will then be passed into the service 1 through json and service 1 will display the result on the web. Service 1 is also where the coordinates are stored in mySQL.
-
-* Website: http://http://34.89.25.151:5000/
+The information gathered and outputted from Service 4 will then be passed into the service 1 through json and Service 1 will display the result on the web. Service 1 is also where the coordinates are stored in mySQL.
 
 ### CI Pipeline
 The CI tools and software used in this project include:
 * CI Server Jenkins 
 * Ansible for Configuration Management
 * GCP VMs
-* Docker and Docker Swarm 
+* Docker Registry and Swarm
+* Docker Compose
 * Trello Kanban board 
 * Git Version Control 
 
@@ -33,7 +32,7 @@ Jenkins then ssh into the Flask-Services VM, which is a manager node in Docker S
 Ideally Ansible should be on another VM, however it is placed in the Flask-Service VM for ease of assessing the entire application.
 
 ## Documentation
-The following are documentation from Trello in order to keep track of the project progress, and a Risk Assessment matrix.
+The following are documentation from Trello in order to keep track of the project progress, and a Risk Assessment matrix to assess manage risks for this project.
 
 ### Trello
 
@@ -46,7 +45,7 @@ The following are documentation from Trello in order to keep track of the projec
 ## Testing and Coverage 
 Three unit tests have been conducted through pytest for Service 1, 2 and 3. All passed with a coverage of 49%, 90% and 89% respectively.
 Service 4 requires on Services 1 and 2 to run to test the output, hence it wasn’t possible to test it without further configuration of the environment.
-The database was tested on Service 1 for its ability to add to the database.
+The database was tested in Service 1 for its ability to add to the database, and Service 2 and 3 were tested on their outputs.
 
 * Presentation: https://docs.google.com/presentation/d/1KqmrXVLW7X2874goL3qRIz_XFjn9wPi7bLrORbKw5xM/edit#slide=id.g76613142fe_0_21
 
@@ -66,4 +65,5 @@ Further improvements on the project are needed such as additional features, to m
 
 ## Author
 Simon Chen
+
 
