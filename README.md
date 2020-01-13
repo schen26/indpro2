@@ -1,4 +1,4 @@
-# Introduction
+# Battleship Solver
 
 ## Brief
 The project brief was to make a service-orientated architecture, which contains four services:
@@ -43,9 +43,9 @@ The following are documentation from Trello in order to keep track of the projec
 * Risk Assessment: https://docs.google.com/spreadsheets/d/1oo7wguKR8sefzVaVCjLgZnzoyaDsgtlERXG5RS0uxJ8/edit#gid=0
 
 ## Testing and Coverage 
-Two tests have been conducted, one for Service 2 another for Service 3.
-Service 1 and 4 depends on other services, hence it wasn’t possible to test them both.
-The database was tested on service 1.
+Three tests have been conducted for Service 1, 2 and 3. All passed with a coverage of 49%, 90% and 89% respectively.
+Service 4 requires on Services 1 and 2 to run to test the output, hence it wasn’t possible to test it without further configuration of the environment.
+The database was tested on Service 1 for its ability to add to the database.
 
 * Presentation: https://docs.google.com/presentation/d/1KqmrXVLW7X2874goL3qRIz_XFjn9wPi7bLrORbKw5xM/edit#slide=id.g76613142fe_0_21
 
@@ -54,16 +54,16 @@ There are some issues within this application that can be resolved if more time 
 * The game doesn’t stop when all parts of the ship has been hit.
 * The game doesn’t stop after all coordinations has been hit.
 * The coordinates repeat itself, hence it would take longer to complete the solve. 
-* Tests to be created for Service 1 and 4.
-* More tests for Service 2 and 3. 
+* Tests to be created for Service 4.
+* More tests for Service 1, 2 and 3. 
 
 ## Conclusion
-By utilising what has been taught in the previous project, in addition to other CI tools after that, it resulted in the creation of this project; which is a battleship solver that will identify the location of the coordinations that contain part of the ship. 
+By utilising what has been taught in the previous project, in addition to other CI tools after that, it resulted in the creation of this project; which is a battleship solver that will identify the location of the coordinates that contain part of the ship. 
 The tools allowed me to implement my code to different machines and environments without having to worry if the application will run or not.
-Two tests are conducted with a coverage of 
+Three tests are conducted with a coverage of 49%, 90% and 89% for Service 1, 2 and 3 respectively. 
 Further improvements on the project are needed such as additional features, to make the application more like the actual game. 
 
-## Authors
+## Author
 Simon Chen
 
 
